@@ -2,7 +2,7 @@
   <v-theme-provider dark>
     <base-section
       id="social"
-      class="accent"
+      class="bg-ebony-clay"
     >
       <v-responsive
         class="mx-auto"

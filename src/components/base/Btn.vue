@@ -4,7 +4,7 @@
     :depressed="depressed"
     :min-width="minWidth"
     :tile="tile"
-    class="font-weight-bold"
+    :class="classes"
     x-large
     v-bind="$attrs"
     v-on="$listeners"
@@ -33,6 +33,17 @@
       tile: {
         type: Boolean,
         default: true,
+      },
+    },
+
+    computed: {
+      classes () {
+        const classes = [
+          'font-weight-bold',
+          `bg-${this.color}`,
+        ]
+
+        return classes
       },
     },
   }

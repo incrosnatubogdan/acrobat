@@ -48,7 +48,7 @@
           cols="2"
         >
           <div
-            class="text-h2 grey--text text--lighten-4 font-weight-bold pr-8"
+            class="text-h2 text--lighten-4 font-weight-bold pr-8"
             v-text="callout"
           />
         </v-col>

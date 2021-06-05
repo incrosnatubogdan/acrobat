@@ -3,6 +3,7 @@
   "version": "2.0.0",
   "private": true,
   "scripts": {
+    "watch": "vue-cli-service serve",
     "serve": "vue-cli-service serve",
     "dev": "yarn serve",
     "prod": "vue-cli-service build",

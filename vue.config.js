@@ -1,3 +1,5 @@
+const path = require('path')
+
 module.exports = {
   outputDir: 'docs',
   devServer: {
@@ -6,4 +8,12 @@ module.exports = {
   transpileDependencies: [
     'vuetify',
   ],
+
+  css: {
+    loaderOptions: {
+      sass: {
+        prependData: '@import "@/styles/variables.scss"',
+      },
+    },
+  },
 }

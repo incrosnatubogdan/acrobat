@@ -26,7 +26,7 @@ const router = new Router({
         {
           path: 'book',
           name: 'Book',
-          component: () => import('@/views/pro/Index.vue'),
+          component: () => import('@/views/book/Index.vue'),
           meta: { src: require('@/assets/pro.jpg') },
         },
         {

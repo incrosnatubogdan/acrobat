@@ -12,22 +12,22 @@
       dark
     />
 
-    <base-subtitle
-      v-if="subtitle"
-      :title="subtitle"
-      space="1"
-      tag="h2"
-    />
-
     <base-subheading
       v-if="title"
       :align="align"
       :title="title"
+      :class="colorClass"
       class="text-uppercase"
       space="2"
     />
 
-    <base-divider :color="color" />
+    <base-subtitle
+      v-if="subtitle"
+      :title="subtitle"
+      :class="colorClass"
+      space="1"
+      tag="h2"
+    />
 
     <base-body
       v-if="$slots.default || text"
@@ -59,7 +59,7 @@
       },
       color: {
         type: String,
-        default: 'primary',
+        default: 'athens-gray',
       },
       icon: String,
       outlined: Boolean,
@@ -77,6 +77,12 @@
         return [
           `text-${this.align}`,
           `mb-${this.space}`,
+          `color-${this.color}`,
+        ]
+      },
+      colorClass () {
+        return [
+          `color-${this.color}`,
         ]
       },
     },
