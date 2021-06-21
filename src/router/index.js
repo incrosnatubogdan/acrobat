@@ -27,13 +27,11 @@ const router = new Router({
           path: 'book',
           name: 'Book',
           component: () => import('@/views/book/Index.vue'),
-          meta: { src: require('@/assets/pro.jpg') },
         },
         {
           path: 'author',
           name: 'Author',
           component: () => import('@/views/author/Index.vue'),
-          meta: { src: require('@/assets/pro.jpg') },
         },
       ],
     },

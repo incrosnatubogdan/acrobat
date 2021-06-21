@@ -12,21 +12,30 @@
     <v-container>
       <v-row>
         <v-col
-          v-for="(item, i) in items"
-          :key="i"
           md="6"
           xl="6"
           lg="6"
           sm="12"
         >
-          <figure>
-            <blockquote>
-              <p><span class="special-quotes"> „ </span> {{ item.text }} <span class="special-quotes"> ” </span> </p>
-            </blockquote>
-            <figcaption v-if="item.chapter">
-              {{ item.chapter }} , <cite>Acrobat</cite>
-            </figcaption>
-          </figure>
+          <v-row>
+            <v-col
+              v-for="(item, i) in items"
+              :key="i"
+              md="12"
+              xl="12"
+              lg="12"
+              sm="12"
+            >
+              <figure>
+                <blockquote>
+                  <p><span class="special-quotes"> „ </span> {{ item.text }} <span class="special-quotes"> ” </span> </p>
+                </blockquote>
+                <figcaption v-if="item.chapter">
+                  {{ item.chapter }} , <cite>Acrobat</cite>
+                </figcaption>
+              </figure>
+            </v-col>
+          </v-row>
         </v-col>
 
         <v-col
@@ -40,31 +49,49 @@
             max-width="374"
           >
             <v-img
+              v-if="!pay"
+              :aspect-ratio="16/9"
               height="250"
-              src="https://cdn.vuetifyjs.com/images/cards/cooking.png"
+              contain
+              src="https://cdn.icon-icons.com/icons2/2389/PNG/512/adobe_acrobat_reader_logo_icon_145525.png"
             />
 
-            <v-card-title>Cafe Badilico</v-card-title>
+            <v-card-title v-if="!pay">
+              Acrobat
+            </v-card-title>
 
-            <v-card-text>
+            <v-card-text v-if="!pay">
               <v-row
                 align="center"
                 class="mx-0"
               >
-                <div>Small plates, salads & sandwiches - an intimate setting with 12 indoor seats plus patio seating.</div>
+                <div>O carte despre multe, Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste illum eveniet commodi, perspiciatis ipsam nostrum, vel voluptatibus dolor nemo, quia molestias! Harum, labore! Fugit ipsam nesciunt rem, dolorum voluptate eum?</div>
               </v-row>
             </v-card-text>
+
+            <!-- <v-form v-if="pay">
+              <v-text-field
+                v-model="email"
+                :rules="emailRules"
+                label="E-mail"
+                required
+                solo
+                append-icon="mdi-check"
+                @click:append="validate"
+              />
+            </v-form> -->
+            <card-details v-if="pay" />
 
             <v-divider class="mx-4" />
 
             <v-card-actions>
-              <v-btn
-                color="deep-purple lighten-2"
-                text
-                @click="reserve"
+              <base-btn
+                :tile="false"
+                color="white"
+                @click="togglePay"
               >
-                Reserve
-              </v-btn>
+                {{ payStatus }}
+              </base-btn>
             </v-card-actions>
           </v-card>
         </v-col>
@@ -80,20 +107,51 @@
 </template>
 
 <script>
+  import axios from 'axios'
+  import CardDetail from '../../components/base/CardForm.vue'
   export default {
     name: 'SectionProChart',
 
-    data: () => ({
-      items: [
-        { text: 'Art is the desire of a man to express himself, to record the reactions of his personality to the world he lives in.', chapter: 'Chapter 1' },
-        { text: 'Propriety was a rigid master, but one that must be obeyed if one wanted to keep a sterling reputation.', chapter: 'Chapter 2' },
-        { text: "If all the world's a stage, I want to operate the trap door.", chapter: 'Chapter 2' },
-      ],
-    }),
+    components: {
+      'card-details': CardDetail,
+    },
+
+    data () {
+      return {
+        items: [
+          { text: 'Art is the desire of a man to express himself, to record the reactions of his personality to the world he lives in.', chapter: 'Chapter 1' },
+          { text: 'Propriety was a rigid master, but one that must be obeyed if one wanted to keep a sterling reputation.', chapter: 'Chapter 2' },
+          { text: "If all the world's a stage, I want to operate the trap door.", chapter: 'Chapter 2' },
+        ],
+        pay: false,
+        form: {
+          email: '',
+          name: '',
+        },
+        emailRules: [
+          v => !!v || 'E-mail is required',
+          v => /.+@.+\..+/.test(v) || 'E-mail must be valid',
+        ],
+      }
+    },
+    computed: {
+      payStatus: {
+        get () {
+          return this.pay ? 'Cancel' : 'Purchase book'
+        },
+      },
+    },
 
     methods: {
       reserve () {
-        console.log(123)
+        axios.post('/api/v1/pay/purhase', {
+        }).then((response) => {
+
+        })
+      },
+
+      togglePay () {
+        this.pay = !this.pay
       },
     },
   }

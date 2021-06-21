@@ -53,7 +53,6 @@
         'Facebook',
         'Twitter',
         'Instagram',
-        'Linkedin',
       ],
     }),
   }

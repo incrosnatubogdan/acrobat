@@ -1,7 +1,7 @@
 const path = require('path')
 
 module.exports = {
-  outputDir: 'docs',
+  outputDir: 'public',
   devServer: {
     disableHostCheck: true,
   },

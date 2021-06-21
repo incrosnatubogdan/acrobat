@@ -14,6 +14,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::group([
+    'prefix'     => 'v1',
+    'middleware' => '',
+    'namespace'  => 'Api',
+    'as'         => 'api.',
+], function () {
+
+    Route::group([
+        'prefix' => 'pay',
+        'as'     => 'pay.',
+    ], function () {
+
+        Route::post('purchase', [
+            'uses' => 'PaymentController@purchase',
+            'as'   => 'purchase'
+        ]);
+    });
+
 });
