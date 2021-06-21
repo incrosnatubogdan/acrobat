@@ -1,10 +1,24 @@
-@import url("https://fonts.googleapis.com/css?family=Source+Code+Pro:400,500,600,700|Source+Sans+Pro:400,600,700&display=swap");
+
+@import url('https://fonts.googleapis.com/css2?family=Esteban:400,500,600,700|Balthazar:400,600,700&display=swap');
 
 body {
   background: #ddeefc;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Esteban", serif;
   font-size: 16px;
 }
+
+.v-application .dark--text {
+  .text-body-1 {
+    color : #D7D0C8
+  }
+}
+
+.v-application .white--text {
+  .text-body-1 {
+    color : #050505
+  }
+}
+
 * {
   box-sizing: border-box;
   &:focus {
@@ -105,7 +119,7 @@ body {
     border-radius: 5px;
     font-size: 22px;
     font-weight: 500;
-    font-family: "Source Sans Pro", sans-serif;
+    font-family: "Esteban", serif;
     box-shadow: 3px 10px 20px 0px rgba(35, 100, 210, 0.3);
     color: #fff;
     margin-top: 20px;
@@ -320,7 +334,7 @@ body {
   }
 
   &__wrapper {
-    font-family: "Source Code Pro", monospace;
+    font-family: "Esteban", serif;
     padding: 25px 15px;
     position: relative;
     z-index: 4;
@@ -374,17 +388,17 @@ body {
   }
 
   &__numberItem {
-    width: 16px;
+    width: 14px;
     display: inline-block;
     &.-active {
-      width: 30px;
+      width: 16px;
     }
 
     @media screen and (max-width: 480px) {
-      width: 13px;
+      width: 11px;
 
       &.-active {
-        width: 16px;
+        width: 14px;
       }
     }
 
@@ -409,7 +423,7 @@ body {
     margin-left: auto;
     padding: 10px;
     display: inline-flex;
-    width: 80px;
+    width: 100px;
     white-space: nowrap;
     flex-shrink: 0;
     cursor: pointer;
@@ -422,7 +436,7 @@ body {
   &__dateItem {
     position: relative;
     span {
-      width: 22px;
+      width: 40px;
       display: inline-block;
     }
   }
@@ -530,7 +544,7 @@ body {
     padding: 5px 15px;
     background: none;
     color: #1a3b5d;
-    font-family: "Source Sans Pro", sans-serif;
+    font-family: "Esteban", serif;
 
     &:hover,
     &:focus {
@@ -693,8 +707,8 @@ body {
   }
 }
 
-$body-font-family: 'PT Sans', sans-serif;
-$heading-font-family: 'Work Sans', sans-serif;
+$body-font-family: 'Esteban', serif;
+$heading-font-family: 'Balthazar', serif;
 
 $headings: (
   'h4': (
@@ -717,7 +731,7 @@ $headings: (
     'letter-spacing': 0.1875rem,
   ),
   'body-1': (
-    'size': .9375rem,
+    'size': .9375rem
   ),
 );
 
@@ -736,4 +750,4 @@ $athens-gray: #EBEFF2;
 $brown-rust: #A64C38;
 $mirage: #181D26;
 $ebony-clay: #283040;
-$buccaneer: #733636;
+$buccaneer: #733636;    

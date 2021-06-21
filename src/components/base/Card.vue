@@ -72,7 +72,7 @@
             :for="fields.cardName"
             class="card-item__info"
           >
-            <div class="card-item__holder">cardHolder</div>
+            <div class="card-item__holder">Nume</div>
             <transition name="slide-fade-up">
               <div
                 v-if="labels.cardName.length"

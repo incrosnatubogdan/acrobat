@@ -1,6 +1,6 @@
 <template>
   <section id="theme-features">
-    <v-row class="dark--text">
+    <v-row>
       <v-col
         xl="6"
         md="6"

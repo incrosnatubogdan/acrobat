@@ -6,7 +6,7 @@
       title="Know the acrobat behind it all"
       color="buccaneer"
     >
-      Get <strong>Acrobat</strong> and level up your <br> lorem ipsum
+      Get <strong>Acrobat</strong> and level up your lorem ipsum
     </base-section-heading>
 
     <v-container>

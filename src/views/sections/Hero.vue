@@ -9,7 +9,7 @@
       >
         <v-container>
           <v-img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4lii7hhNK-PD6Nez8x_lv9HyIhqC1Ia1RIA&usqp=CAU"
+            src="https://cdn.shopify.com/s/files/1/1815/0105/products/bfef49faf541a7c53c76d7e6e20e80def423648d.jpg?v=1618867738"
             class="white--text"
           />
           <div class="text-center mt-4">
