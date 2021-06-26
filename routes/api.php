@@ -32,4 +32,16 @@ Route::group([
         ]);
     });
 
+    Route::group([
+        'prefix' => 'subscribe',
+        'as'     => 'subscribe.',
+    ], function () {
+
+        Route::post('create', [
+            'uses' => 'UserController@create',
+            'as'   => 'create'
+        ]);
+        
+    });
+
 });

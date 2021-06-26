@@ -43,6 +43,7 @@
 </template>
 
 <script>
+  import axios from 'axios'
   export default {
     name: 'SectionFeatures',
     data: () => ({
@@ -69,7 +70,17 @@
 
     methods: {
       validate () {
-        this.$refs.form.validate()
+        if (this.$refs.form.validate()) {
+          const params = {
+            email: this.email,
+          }
+          // axios.post('/api/v1/subscribe/create', params).then((response) => {
+
+          // })
+          axios.post('create-sub', params).then((response) => {
+
+          })
+        }
       },
       reset () {
         this.$refs.form.reset()
